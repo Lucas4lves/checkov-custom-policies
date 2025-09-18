@@ -1,0 +1,13 @@
+metadata:
+  name: "Ensure azurerm_storage_account resources have infrastructure_encryption_enabled set"
+  id: "AZ_STORAGE_ACCOUNT_INFRA_ENC"
+  category: "ENCRYPTION"
+scope:
+  provider: azure
+definition:
+  cond_type: attribute
+  attribute: "infrastructure_encryption_enabled"
+  resource_types:
+    - "azurerm_storage_account"
+  operator: "not_equals"
+  value: false
