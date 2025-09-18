@@ -3,10 +3,10 @@ run-name: "Checkov Run"
 on: [push]
 jobs:
   run:
-  runs-on: ubuntu-latest
-  container: bridgecrew/checkov:3
-  steps:
-    - name: checkout repo
-      uses: actions/checkout@v4
-    - name: run checks
-      run: ls -ilha
+    runs-on: ubuntu-latest
+    container: bridgecrew/checkov:3
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v4
+      - name: run checks
+        run: ls -ilha

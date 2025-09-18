@@ -23,6 +23,6 @@ variable "sa_config" {
     storage_account1 = {
     name                              = "for_each_sa"
     account_tier                      = "Standard"
-    infrastructure_encryption_enabled = true
+    infrastructure_encryption_enabled = false
   }}
 }
