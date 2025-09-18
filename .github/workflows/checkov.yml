@@ -9,4 +9,4 @@ jobs:
       - name: checkout repo
         uses: actions/checkout@v4
       - name: run checks
-        run: docker run -v $(pwd):/src bridgecrew/checkov:3 -d ./src --external-checks-dir ./src/checks
+        run: checkov -d ./az-storage-account --external-checks-dir ./az-storage-account/checks
