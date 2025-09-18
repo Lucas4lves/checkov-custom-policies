@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 reports_folder_path="../../reports"
 mkdir $reports_folder_path
