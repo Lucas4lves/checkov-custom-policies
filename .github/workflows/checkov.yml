@@ -5,12 +5,14 @@ jobs:
   run:
     runs-on: ubuntu-latest
     container: bridgecrew/checkov:3
+    defaults:
+      run:
+        working-directory: ./ci/scripts
     steps:
       - name: checkout repo
-        uses: actions/checkout@v4
-      - name: run checks
+        uses: actions/checkout@v4 
+      - name: make scripts executable
+        run: chmod +x *.sh
+      - name: checks
         run: |
-            #!/bin/bash
-            checkov -d ./az-storage-account --external-checks-dir ./az-storage-account/checks > ./report 2>&1
-      - name: upload report
-        uses: actions/upload-artifact@v4
+          ./checkov.sh
